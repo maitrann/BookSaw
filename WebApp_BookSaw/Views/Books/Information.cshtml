@@ -1,0 +1,44 @@
+﻿
+@{
+	ViewData["Title"] = "Information";
+	Layout = "~/Views/Shared/_LayoutClient.cshtml";
+	API_BookSaw.Entities.Book infoBook = ViewBag.infoBook;
+}
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="page-title">@infoBook.title</h1>
+				<div class="breadcrumbs">
+					<button class="nav-link btn btn-outline-dark rounded-pill m-0" target="_blank">Save books to the library</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="padding-medium">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12">
+
+				<div class="post-thumbnail mb-5">
+					<img src="@infoBook.image" alt="post thumbnail" class="img-fluid">
+				</div>
+
+				<div class="post-content">
+					<p>
+						@infoBook.content
+					</p>
+
+				</div><!--post-content-->
+
+			</div>
+
+		</div>
+	</div>
+</section>
+
+

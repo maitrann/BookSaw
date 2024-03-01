@@ -7,5 +7,7 @@ namespace API_BookSaw.Interfaces
         List<Book> GetBooks();
         List<Book> GetNewBooks();
         List<Book> GetBooksByCate(int idCate);
-    }
+        Book GetBooksById(int id);
+
+	}
 }

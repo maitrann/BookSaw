@@ -5,7 +5,7 @@ namespace API_BookSaw.Interfaces
 {
     public interface IDownBookRepository
     {
-        void DownBookToLib(DownBook model);
+        bool DownBookToLib(DownBook model);
         List<DownBookView> GetDownBookViews(int idClient);
 
     }

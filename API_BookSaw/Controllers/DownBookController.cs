@@ -18,15 +18,7 @@ namespace API_BookSaw.Controllers
         [HttpPost]
         public bool DownBookToLib(DownBook model)
         {
-            try
-            {
-                _downbookRepository.DownBookToLib(model);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            return _downbookRepository.DownBookToLib(model);
         }
         [HttpGet("{idClient}", Name = "IdClient")]
         public IActionResult GetDownBookViews(int idClient)

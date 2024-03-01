@@ -3,6 +3,7 @@ using API_BookSaw.Interfaces;
 using API_BookSaw.ModelsView;
 using Dapper;
 using System.Data;
+using System.Net.Sockets;
 
 namespace API_BookSaw.Repository
 {
@@ -13,8 +14,10 @@ namespace API_BookSaw.Repository
         {
             _context = context;
         }
-        public void DownBookToLib(DownBook model)
+        public bool DownBookToLib(DownBook model)
         {
+            var checkDown = "select * from DownBook where idClient=@idClient and idBook=@idBook";
+            bool check = false;
             var query = "INSERT INTO DownBook (idClient,idBook,createDate) VALUES (@idClient, @idBook, @createDate)";
             var parameters = new DynamicParameters();
             parameters.Add("idClient", model.idClient, DbType.String);
@@ -22,8 +25,17 @@ namespace API_BookSaw.Repository
             parameters.Add("createDate", DateTime.Now, DbType.String);
             using (var connection = _context.CreateConnection())
             {
-                connection.Execute(query, parameters);
+                var downbooks = connection.Query<DownBookView>(checkDown, new { model.idClient, model.idBook }).FirstOrDefault();
+                if (downbooks == null)
+                {
+                    connection.Execute(query, parameters);
+                    check = true;
+                } else
+                {
+                    check = false;
+                }
             }
+            return check;
         }
 
         public List<DownBookView> GetDownBookViews(int idClient)

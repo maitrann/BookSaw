@@ -5,6 +5,7 @@
 		public static string GetNewBooks = "https://localhost:7031/api/Book/GetNewBooks";
 		public static string GetBooks = "https://localhost:7031/api/Book/GetBooks";
 		public static string GetBooksByCate = "https://localhost:7031/api/Book/GetBooksByCate";
+		public static string GetBooksById = "https://localhost:7031/api/Book/GetBooksById";
 
 	}
 }

@@ -40,6 +40,14 @@ namespace API_BookSaw.Repository
                 return books;
             }
         }
-    
-    }
+		public Book GetBooksById(int id)
+		{
+			var query = "SELECT * FROM Book WHERE isActive = 1 AND id = @id";
+			using (var connection = _context.CreateConnection())
+			{
+				var books = connection.Query<Book>(query, new { id }).FirstOrDefault();
+				return books;
+			}
+		}
+	}
 }

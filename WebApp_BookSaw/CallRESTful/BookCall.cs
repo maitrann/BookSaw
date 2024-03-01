@@ -68,5 +68,21 @@ namespace WebApp_BookSaw.CallRESTful
 				return prodInfo;
 			}
 		}
+		public Book GetBooksById(int id)
+		{
+            Book prodInfo = new Book();
+			using (var client = new HttpClient())
+			{
+				client.DefaultRequestHeaders.Clear();
+				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+				HttpResponseMessage Res = client.GetAsync(BookURL.GetBooksById + "/" + id).GetAwaiter().GetResult();
+				if (Res.IsSuccessStatusCode)
+				{
+					var prodResponse = Res.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+					prodInfo = JsonConvert.DeserializeObject<Book>(prodResponse);
+				}
+				return prodInfo;
+			}
+		}
 	}
 }

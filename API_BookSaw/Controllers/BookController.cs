@@ -56,6 +56,23 @@ namespace API_BookSaw.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+		[HttpGet("{id}", Name = "Id")]
+		public IActionResult GetBooksById(int id)
+		{
+			try
+			{
+				var books = _bookRepository.GetBooksById(id);
+				if (books == null)
+				{
+					return NotFound();
+				}
+				return Ok(books);
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(500, ex.Message);
+			}
+		}
 
-    }
+	}
 }
