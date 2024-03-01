@@ -1,0 +1,6 @@
+@ReactApp_BookSaw.Server_HostAddress = http://localhost:5234
+
+GET {{ReactApp_BookSaw.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

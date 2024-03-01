@@ -1,0 +1,6 @@
+@API_BookSaw_HostAddress = http://localhost:5093
+
+GET {{API_BookSaw_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
