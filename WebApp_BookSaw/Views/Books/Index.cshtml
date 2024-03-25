@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_LayoutClient.cshtml";
-    List<API_BookSaw.Entities.Book> allBooks = ViewBag.allBooks;
+    List<RestAPI_BookSaw.Entities.Book> allBooks = ViewBag.allBooks;
 }
 
 
@@ -60,7 +60,7 @@
     </div>
 </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     $("img[name='imgBook']").click(function () {
         window.location.href = "https://localhost:7177/Books/Information/" + $(this).attr("data-id");
@@ -75,9 +75,20 @@
             },
             success: function (res) {
                 if (res == "True") {
-                    alert("Download to Library success");
+                    Swal.fire({
+                        title: "Save Book!",
+                        text: "Download to Library success!",
+                        icon: "success",
+                        showConfirmButton: false,
+                        timer: 1200
+                    });
                 } else {
-                    alert("This book has been downloaded");
+                    Swal.fire({
+                        title: "Save Book!",
+                        text: "This book has been downloaded!",
+                        showConfirmButton: false,
+                        timer: 1200
+                    });
                 }
             },
             error: function (response) {

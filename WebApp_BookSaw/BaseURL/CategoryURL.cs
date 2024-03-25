@@ -2,7 +2,7 @@
 {
     public class CategoryURL
     {
-        public static string GetSomeCategoryAndBooks = "https://localhost:7031/api/Category/GetSomeCategoryAndBooks";
+        public static string GetSomeCategoryAndBooks = "http://localhost:5259/api/Category/GetSomeCategoryAndBooks";
 
     }
 }

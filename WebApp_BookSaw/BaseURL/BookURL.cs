@@ -2,10 +2,10 @@
 {
 	public class BookURL
 	{
-		public static string GetNewBooks = "https://localhost:7031/api/Book/GetNewBooks";
-		public static string GetBooks = "https://localhost:7031/api/Book/GetBooks";
-		public static string GetBooksByCate = "https://localhost:7031/api/Book/GetBooksByCate";
-		public static string GetBooksById = "https://localhost:7031/api/Book/GetBooksById";
+		public static string GetNewBooks = "http://localhost:5259/api/Book/GetNewBooks";
+		public static string GetBooks = "http://localhost:5259/api/Book/GetBooks";
+		public static string GetBooksByCate = "http://localhost:5259/api/Book/GetBooksByCate";
+		public static string GetBooksById = "http://localhost:5259/api/Book/GetBooksById";
 
 	}
 }

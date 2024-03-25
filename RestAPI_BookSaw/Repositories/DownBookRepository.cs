@@ -1,16 +1,16 @@
-﻿using API_BookSaw.Entities;
-using API_BookSaw.Interfaces;
-using API_BookSaw.ModelsView;
+﻿using RestAPI_BookSaw.Entities;
+using RestAPI_BookSaw.Interfaces;
+using RestAPI_BookSaw.ModelsView;
 using Dapper;
 using System.Data;
 using System.Net.Sockets;
 
-namespace API_BookSaw.Repository
+namespace RestAPI_BookSaw.Repositories
 {
     public class DownBookRepository : IDownBookRepository
     {
-        private readonly BookSawEntities _context;
-        public DownBookRepository(BookSawEntities context)
+        private readonly BookSawContext _context;
+        public DownBookRepository(BookSawContext context)
         {
             _context = context;
         }

@@ -1,0 +1,6 @@
+@RestAPI_BookSaw_HostAddress = http://localhost:5259
+
+GET {{RestAPI_BookSaw_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,8 +1,8 @@
-﻿using API_BookSaw.Interfaces;
+﻿using RestAPI_BookSaw.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API_BookSaw.Controllers
+namespace RestAPI_BookSaw.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]

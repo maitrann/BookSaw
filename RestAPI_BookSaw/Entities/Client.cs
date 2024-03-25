@@ -1,4 +1,4 @@
-﻿namespace API_BookSaw.Entities
+﻿namespace RestAPI_BookSaw.Entities
 {
     public class Client
     {

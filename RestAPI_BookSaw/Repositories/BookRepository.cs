@@ -1,21 +1,21 @@
-﻿using API_BookSaw.Entities;
-using API_BookSaw.Interfaces;
+﻿using RestAPI_BookSaw.Entities;
+using RestAPI_BookSaw.Interfaces;
 using Dapper;
 using System.Data;
 
-namespace API_BookSaw.Repository
+namespace RestAPI_BookSaw.Repositories
 {
     public class BookRepository : IBookRepository
     {
-        private readonly BookSawEntities _context;
-        public BookRepository(BookSawEntities context)
+        private readonly BookSawContext _context;
+        public BookRepository(BookSawContext context)
         {
             _context = context;
         }
 
         public List<Book> GetBooks()
         {
-            var query = "SELECT * FROM Book WHERE isActive = 1 ORDER BY createDate desc";
+            var query = "SELECT * FROM Book WHERE isActive = 1 ORDER BY NEWID()";
             using (var connection = _context.CreateConnection())
             {
                 var books = connection.Query<Book>(query).ToList();

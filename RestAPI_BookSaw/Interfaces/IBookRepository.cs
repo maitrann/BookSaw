@@ -1,6 +1,6 @@
-﻿using API_BookSaw.Entities;
+﻿using RestAPI_BookSaw.Entities;
 
-namespace API_BookSaw.Interfaces
+namespace RestAPI_BookSaw.Interfaces
 {
     public interface IBookRepository
     {

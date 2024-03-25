@@ -2,14 +2,14 @@
 @{
 	ViewData["Title"] = "Information";
 	Layout = "~/Views/Shared/_LayoutClient.cshtml";
-	API_BookSaw.Entities.Book infoBook = ViewBag.infoBook;
+	RestAPI_BookSaw.Entities.Book infoBook = ViewBag.infoBook;
 }
 
 <section>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h1 class="page-title">@infoBook.title</h1>
+				<h1 class="page-title" style="font-family:auto;">@infoBook.title</h1>
 				<div class="breadcrumbs">
 					<button class="nav-link btn btn-outline-dark rounded-pill m-0" target="_blank">Save books to the library</button>
 				</div>

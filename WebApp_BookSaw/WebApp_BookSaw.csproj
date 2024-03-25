@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\API_BookSaw\API_BookSaw.csproj" />
+    <ProjectReference Include="..\RestAPI_BookSaw\RestAPI_BookSaw.csproj" />
   </ItemGroup>
 
 </Project>
